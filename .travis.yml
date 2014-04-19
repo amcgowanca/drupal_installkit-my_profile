@@ -36,7 +36,7 @@ script:
   - drush site-install my_profile --account-name=admin --account-pass=password --account-mail=admin@localhost.com --site-mail=admin@localhost.com --site-name=MyProfile --db-url=mysql://root@localhost/myprofile --yes
   - drush fra --yes
   - drush cc all
-  - drush php-eval 'print "Webform Module Exists: " . (module_exists("webform") ? "Yes" : "No") . PHP_EOL;'
+  - drush pm-list --pipe --type=module --status=enabled --no-core
   - cd ..
   - curl localhost
   - time curl http://localhost -s -o /dev/null
